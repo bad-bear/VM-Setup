@@ -43,6 +43,12 @@ sudo apt-get install dart
 export PATH="$PATH:/usr/lib/dart/bin"
 echo 'export PATH="$PATH:/usr/lib/dart/bin"' >> ~/.profile
 
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install postgresql
+
+
 sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
